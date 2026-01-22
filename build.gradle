@@ -1,0 +1,75 @@
+plugins {
+    id 'java'
+    id 'com.gradleup.shadow' version '9.3.1'
+}
+
+group = 'com.github.hwan.julyguildplus'
+version = '2.2.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    flatDir { dirs 'libs' }
+    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url = 'https://repo.dmulloy2.net/repository/public/' }
+    maven { url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
+    maven { url = 'https://repo.codemc.org/repository/maven-public/' }
+    maven { url = 'https://repo.rosewooddev.io/repository/public/' }
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+    maven { url = 'https://jitpack.io' }
+}
+
+dependencies {
+    // 本地依赖
+    compileOnly files('libs/Vault-1.7.3.jar')
+    compileOnly files('libs/PlayerPoints-3.3.3.jar')
+    implementation files('libs/JulyLib-2.6.0.jar')
+    
+    // 编译依赖
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    implementation 'com.scireum:parsii:1.5'
+    implementation 'org.bstats:bstats-bukkit:3.0.2'
+    
+    // 仅在编译时提供的依赖（运行时由 Spigot 服务器提供）
+    compileOnly 'org.spigotmc:spigot-api:1.21.11-R0.1-SNAPSHOT'
+    compileOnly 'me.clip:placeholderapi:2.11.7'
+    compileOnly 'org.jetbrains:annotations:24.0.1'
+}
+
+tasks.named('compileJava') {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('processResources') {
+    filteringCharset = 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand(project.properties)
+    }
+}
+
+// 创建包含所有依赖的 JAR 文件
+shadowJar {
+    archiveFileName = "${project.name}-${project.version}.jar"
+    
+    relocate 'org.bstats', 'com.github.hwan.julyguildplus.libs.bstats'
+    relocate 'parsii', 'libs.pari'
+    relocate 'org.apache.commons', 'libs.org.apache.commons'
+    
+    exclude 'META-INF/*.SF'
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    mergeServiceFiles()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+// 禁用测试任务（项目没有有效的测试）
+test {
+    enabled = false
+}

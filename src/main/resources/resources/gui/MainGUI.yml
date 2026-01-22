@@ -9,7 +9,7 @@ other_items:
       material: STAINED_GLASS_PANE
       display_name: ''
       lores:
-        - '&cby July_ss'
+        - ''
 # 插件物品
 items:
   back:

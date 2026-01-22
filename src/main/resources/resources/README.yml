@@ -1,4 +1,4 @@
-version: 1.0.0
+version: 2.0.0
 # 使用指南：
 # 如果你想关闭某个功能，在物品项中添加一行 enabled: false 即可，届时图标也不会显示。
 # 如果你要在物品或GUI中使用papi变量，添加一行 use_papi: true 即可。
@@ -22,4 +22,4 @@ version: 1.0.0
 # HIDE_UNBREAKABLE 隐藏不可破坏
 # HIDE_DESTROYS
 # HIDE_PLACED_ON
-# HIDE_POTION_EFFECTS
+# HIDE_POCION_EFFECTS

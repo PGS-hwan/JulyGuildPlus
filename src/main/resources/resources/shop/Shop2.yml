@@ -7,8 +7,8 @@ other_items:
     icon:
       material: STAINED_GLASS_PANE
       display_name: ''
-      lores:
-        - '&cby July_ss'
+      lores: 
+        - ''
 simple_confirm_gui: &simple_confirm_gui
   row: 3
   title: '&c&l确认支付'
