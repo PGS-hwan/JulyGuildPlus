@@ -108,7 +108,6 @@ A: 需要安装 PlaceholderAPI 插件，并下载相应扩展。
 
 ### 致谢
 
-- 感谢 Cobyqwq 的 [JulyLibrary-Fix](https://github.com/Cobyqwq/JulyLibrary_Fix/releases) 项目！
 - 感谢所有为本项目做出贡献和反馈的人！
 
 > ⭐ 如果您觉得本项目不错，欢迎给予 Star ⭐
