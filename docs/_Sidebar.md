@@ -33,9 +33,9 @@
 - **版本**: 1.7.10-1.21.11
 - **作者**: PGS_hwan & 柒月(原作者)
 - **GitHub**: [仓库主页](../../)
-- **JulyLibrary-Fix**: [下载](https://github.com/Cobyqwq/JulyLibrary_Fix/releases)
 
 ---
 
 **📌 遇到问题？**  
+
 携带服务器版本、插件列表、后台日志前往反馈！
