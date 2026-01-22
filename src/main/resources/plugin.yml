@@ -1,0 +1,12 @@
+name: JulyGuildPlus
+main: com.github.hwan.julyguildplus.JulyGuildPlus
+author: Hwan
+version: ${project.version}
+api-version: 1.13
+softdepend: [PlayerPoints, Vault, PlaceholderAPI]
+commands:
+  jgp:
+    aliases:
+      - guild
+      - jg
+      - gh
